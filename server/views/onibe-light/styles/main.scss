@@ -1,0 +1,301 @@
+@import "./variables";
+@import "./mixins";
+@import "./bootstrap";
+@import "./fonts";
+@import "./homepage";
+@import "./navbar-onibe";
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+$footer-height: 150px;
+
+body {
+  font-family: $font-family-primary;
+  color: $gray;
+  font-weight: 400;
+  margin: 0 0 $footer-height 0;
+}
+
+a {
+  color: $color5;
+}
+
+p {
+  color: $color5;
+}
+
+h1 {
+  font-family: $font-family-secondary;
+  color: $color1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-secondary;
+  color: $color1;
+
+}
+
+.font-family-secondary {
+  font-family: $font-family-secondary;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.logo {
+  color: $color3;
+}
+
+
+.section {
+  padding: 4em 0 5em;
+}
+
+
+.team {
+  p {
+    text-align: center;
+  }
+
+  img {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+}
+
+.team-member {
+  padding: 60px;
+  &-wrapper {
+    background: url('/onibe-light/images/LLSS.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: $color3;
+  }
+  &-cover {
+    height: 440px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  &-image {
+    //border-radius: 50%;
+    //margin-bottom: 20px;
+    width: 120%;
+    max-width: 180px;
+    height: 100%;
+    box-shadow: 0 5px 9px $gray1;
+    -webkit-clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+    clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+  }
+
+  // Ideal 520x440
+  // 13:11 ratio
+  // Can't be square, make sure the sides have equal length
+  &-image-container {
+    margin: 0 auto;
+    width: 247px;
+    height: 209px;
+    background-size: cover;
+    -webkit-clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+    clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+  }
+
+  &-name {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  &-image-link {
+    width: 100%;
+  }
+  &-profile {
+    font-size: 14px;
+  }
+  &-roles {
+    text-align: right;
+    .label {
+      margin: 2px 0;
+      text-align: left;
+      display: inline-block;
+      font-weight: normal;
+
+      // Fix to media class in label-social media,, #FIX THIS
+      zoom: 0;
+      overflow: inherit;
+    }
+  }
+
+}
+
+
+.about {
+
+  min-height: calc(100vh - 70px);
+  height: 100%;
+  background: $lighter-black;
+  background-image:  url("/onibe-light/images/aqours-seiyuus.png");
+  background-size: cover;
+  background-position: top;
+  display: flex;
+  p {
+    color: $white;
+  }
+  &-cover {
+    background: rgba(0,0,0,0.65);
+    color: #FFF;
+    padding: 160px 0 80px 0;
+    line-height: 32px;
+  }
+  .container {
+    align-self: flex-end;
+  }
+  @media (min-width: $screen-sm-min) {
+    height: calc(100vh - 70px);
+
+    &-cover {
+      padding: 80px;
+      color: #FFF;
+      line-height: 42px;
+      width: 100%;
+      align-self: stretch;
+      display: flex;
+    }
+  }
+
+}
+
+
+.navbar-offset {
+  margin-top: 70px;
+}
+
+.voffset  { margin-top: 2px; }
+.voffset1 { margin-top: 5px; }
+.voffset2 { margin-top: 10px; }
+.voffset3 { margin-top: 15px; }
+.voffset4 { margin-top: 30px; }
+.voffset5 { margin-top: 40px; }
+.voffset6 { margin-top: 60px; }
+.voffset7 { margin-top: 80px; }
+.voffset8 { margin-top: 100px; }
+.voffset9 { margin-top: 150px; }
+
+.rvoffset  { margin-bottom: 2px; }
+.rvoffset1 { margin-bottom: 5px; }
+.rvoffset2 { margin-bottom: 10px; }
+.rvoffset3 { margin-bottom: 15px; }
+.rvoffset4 { margin-bottom: 30px; }
+.rvoffset5 { margin-bottom: 40px; }
+.rvoffset6 { margin-bottom: 60px; }
+.rvoffset7 { margin-bottom: 80px; }
+.rvoffset8 { margin-bottom: 100px; }
+.rvoffset9 { margin-bottom: 150px; }
+
+// Sticky Footer
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  /* Set the fixed height of the footer here */
+  height: $footer-height;
+  background: $color3;
+
+  .copyright {
+    text-align: right;
+  }
+
+  .copyright span {
+    font-size: 16px;
+    //letter-spacing: 0.05em;
+    //font-weight: 300;
+    color: $white;
+  }
+
+  .copyright span.separator {
+    font-size: 10px;
+    -webkit-transform: translateY(-2px);
+    -moz-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
+    -o-transform: translateY(-2px);
+    transform: translateY(-2px);
+    display: inline-block;
+    margin: 0 10px;
+    color: $color1;
+  }
+
+  .copyright a {
+    color: $white;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .copyright a:hover {
+    color: $color1;
+  }
+
+  hr {
+    border: none;
+    height: 1px;
+    background: $color1;
+    width: 169px;
+    margin: 8px 0 8px auto;
+  }
+}
+
+/**
+ * Overrides: this overrides bootstrap's caret properties
+ */
+.materialize .select-wrapper span.caret {
+  width: auto;
+  border: 0;
+}
+
+.materialize .input-field label {
+  text-align: left;
+}
+
+// Overrides: scaffolding.scss
+html {
+  font-size: 14px;
+}
+
+.hiddendiv {
+  display: none;
+}
+
+
+.label-translator {
+  background: rgb(136, 227, 250);
+};
+
+.label-admin {
+  background: rgb(228, 58, 146);
+};
+
+.label-typesetter {
+  background: rgb(250, 158, 59);
+};
+
+.label-timer {
+  background: rgb(194, 146, 236)
+};
+
+.label-website,
+.label-social,
+.label-manager {
+  background: #737f8d;
+};
+
+.label-qc{
+  background: rgb(241, 196, 15);
+};
